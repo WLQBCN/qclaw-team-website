@@ -3,18 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>心意内衣2026年中感恩盛典邀请函</title>
 
-<!-- 微信分享 - 必须放在最前面 -->
-<meta property="og:title" content="心意内衣2026年中感恩盛典邀请函" />
-<meta property="og:description" content="同心同行·孝暖初心·致敬坚守 | 6月17日 建瓯玺苑大酒店" />
-<meta property="og:image" content="https://www.qclaw.team/logo.jpg" />
-<meta property="og:url" content="https://www.qclaw.team/share.html" />
-<meta property="og:type" content="website" />
-<meta name="description" content="同心同行·孝暖初心·致敬坚守 | 2026年6月17日 建瓯玺苑大酒店" />
-<meta name="keywords" content="心意内衣,年会,邀请函,感恩盛典" />
+<!-- 微信分享优化 - 使用 http-equiv 让微信尽快抓取 -->
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="description" content="同心同行·孝暖初心·致敬坚守 | 2026年6月17日 建瓯玺苑大酒店">
+
+<!-- 微信og标签 - 关键优化 -->
+<meta property="og:title" content="心意内衣2026年中感恩盛典邀请函">
+<meta property="og:description" content="2026年6月17日 建瓯玺苑大酒店 | 心意内衣诚邀您参加">
+<meta property="og:image" content="https://www.qclaw.team/logo.jpg">
+<meta property="og:image:width" content="300">
+<meta property="og:image:height" content="300">
+<meta property="og:url" content="https://www.qclaw.team/share.html">
+<meta property="og:type" content="website">
+
+<!-- 微博等其他平台 -->
+<meta name="keyword" content="心意内衣,年会,邀请函,感恩盛典">
 
 <style>
  * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,6 +42,9 @@
  overflow: hidden;
  }
 
+ /* 微信分享图片 - 关键！必须放在body内 */
+ .weixin-share-img { display: none; }
+
  /* 个性化问候栏 */
  .personal-greeting {
  position: fixed;
@@ -49,27 +58,10 @@
  -webkit-backdrop-filter: blur(10px);
  }
 
- .greeting-content {
- max-width: 480px;
- margin: 0 auto;
- display: flex;
- align-items: center;
- gap: 8px;
- }
-
+ .greeting-content { max-width: 480px; margin: 0 auto; display: flex; align-items: center; gap: 8px; }
  .greeting-icon { font-size: 18px; }
-
- .greeting-text {
- font-size: 13px;
- color: #f0d78c;
- letter-spacing: 1px;
- line-height: 1.6;
- }
-
- .greeting-name {
- font-weight: 600;
- color: #d4af37;
- }
+ .greeting-text { font-size: 13px; color: #f0d78c; letter-spacing: 1px; line-height: 1.6; }
+ .greeting-name { font-weight: 600; color: #d4af37; }
 
  /* 封面 */
  .cover {
@@ -95,7 +87,6 @@
  }
 
  .logo-container { margin-bottom: 25px; z-index: 1; }
-
  .logo-img {
  width: 120px; height: auto; border-radius: 8px;
  background: rgba(255, 255, 255, 0.1); padding: 10px;
@@ -107,10 +98,7 @@
  margin-bottom: 25px;
  }
 
- .cover-subtitle {
- font-size: 13px; letter-spacing: 8px; color: #d4af37;
- margin-bottom: 20px; text-transform: uppercase;
- }
+ .cover-subtitle { font-size: 13px; letter-spacing: 8px; color: #d4af37; margin-bottom: 20px; text-transform: uppercase; }
 
  .cover-title {
  font-size: 32px; font-weight: 700;
@@ -119,26 +107,10 @@
  background-clip: text; letter-spacing: 4px; line-height: 1.4; margin-bottom: 15px;
  }
 
- .cover-tagline {
- font-size: 15px; color: #c9a04a; letter-spacing: 2px;
- margin-bottom: 35px; line-height: 1.8;
- }
-
- .cover-company {
- font-size: 14px; letter-spacing: 6px; color: #a08040;
- border: 1px solid rgba(212, 175, 55, 0.3); padding: 12px 30px; margin-bottom: 35px;
- }
-
- .cover-date-badge {
- background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
- color: #1a0a0a; font-size: 16px; font-weight: 700;
- padding: 15px 40px; letter-spacing: 3px; margin-bottom: 20px;
- }
-
- .cover-hint {
- font-size: 12px; color: #8a7a5a; letter-spacing: 2px;
- animation: bounce 2s infinite;
- }
+ .cover-tagline { font-size: 15px; color: #c9a04a; letter-spacing: 2px; margin-bottom: 35px; line-height: 1.8; }
+ .cover-company { font-size: 14px; letter-spacing: 6px; color: #a08040; border: 1px solid rgba(212, 175, 55, 0.3); padding: 12px 30px; margin-bottom: 35px; }
+ .cover-date-badge { background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%); color: #1a0a0a; font-size: 16px; font-weight: 700; padding: 15px 40px; letter-spacing: 3px; margin-bottom: 20px; }
+ .cover-hint { font-size: 12px; color: #8a7a5a; letter-spacing: 2px; animation: bounce 2s infinite; }
 
  @keyframes bounce {
  0%, 100% { transform: translateY(0); }
@@ -182,13 +154,8 @@
  }
 
  .info-card-content { flex: 1; }
-
  .info-card-label { font-size: 12px; color: #8a7a5a; letter-spacing: 2px; margin-bottom: 6px; }
-
- .info-card-value {
- font-size: 16px; color: #f5e6d3; font-weight: 600;
- letter-spacing: 1px; line-height: 1.5;
- }
+ .info-card-value { font-size: 16px; color: #f5e6d3; font-weight: 600; letter-spacing: 1px; line-height: 1.5; }
 
  .map-nav-btn {
  display: inline-flex; align-items: center; gap: 6px;
@@ -213,10 +180,7 @@
  position: absolute; left: -24px; top: 4px; width: 13px; height: 13px;
  background: #1a0505; border: 2px solid #d4af37; z-index: 1;
  }
- .timeline-dot::after {
- content: ''; position: absolute; top: 3px; left: 3px;
- width: 5px; height: 5px; background: #d4af37;
- }
+ .timeline-dot::after { content: ''; position: absolute; top: 3px; left: 3px; width: 5px; height: 5px; background: #d4af37; }
 
  .timeline-time { font-size: 12px; color: #d4af37; letter-spacing: 1px; margin-bottom: 4px; font-weight: 600; }
  .timeline-title { font-size: 15px; color: #f0d78c; font-weight: 600; margin-bottom: 4px; letter-spacing: 1px; }
@@ -241,24 +205,10 @@
  .pillar-name { font-size: 14px; color: #f0d78c; font-weight: 600; letter-spacing: 2px; margin-bottom: 6px; }
  .pillar-desc { font-size: 11px; color: #8a7a5a; line-height: 1.5; }
 
- .footer-section {
- text-align: center; padding: 50px 30px 60px;
- background: linear-gradient(180deg, #0d0202, #050101);
- }
-
- .footer-logo {
- width: 80px; height: auto; margin-bottom: 20px; border-radius: 6px;
- background: rgba(255, 255, 255, 0.1); padding: 8px;
- }
-
+ .footer-section { text-align: center; padding: 50px 30px 60px; background: linear-gradient(180deg, #0d0202, #050101); }
+ .footer-logo { width: 80px; height: auto; margin-bottom: 20px; border-radius: 6px; background: rgba(255, 255, 255, 0.1); padding: 8px; }
  .footer-slogan { font-size: 18px; color: #f0d78c; letter-spacing: 3px; margin-bottom: 30px; font-weight: 600; }
-
- .footer-oath {
- font-size: 13px; color: #a09080; line-height: 2; letter-spacing: 1px;
- margin-bottom: 30px; padding: 20px;
- border: 1px solid rgba(212, 175, 55, 0.15); background: rgba(212, 175, 55, 0.03);
- }
-
+ .footer-oath { font-size: 13px; color: #a09080; line-height: 2; letter-spacing: 1px; margin-bottom: 30px; padding: 20px; border: 1px solid rgba(212, 175, 55, 0.15); background: rgba(212, 175, 55, 0.03); }
  .footer-note { font-size: 11px; color: #6a5a4a; letter-spacing: 1px; line-height: 1.8; }
 
  .ornament-line {
@@ -268,6 +218,7 @@
  }
  .ornament-line::after { content: '❖'; font-size: 16px; color: rgba(212, 175, 55, 0.3); }
 
+ /* 音乐控制 */
  .music-control {
  position: fixed; top: 60px; right: 20px; width: 44px; height: 44px;
  background: rgba(212, 175, 55, 0.2); border: 2px solid #d4af37;
@@ -327,20 +278,75 @@
  }
  .float-btn:hover { background: rgba(212, 175, 55, 0.4); transform: scale(1.1); }
 
- /* 脉冲动画 */
  .pulse { animation: pulse 2s infinite; }
  @keyframes pulse {
  0%, 100% { transform: scale(1); }
  50% { transform: scale(1.05); }
  }
+
+ /* 分享链接展示框 */
+ .share-link-box {
+ background: rgba(212, 175, 55, 0.1);
+ border: 1px solid rgba(212, 175, 55, 0.3);
+ border-radius: 12px;
+ padding: 20px;
+ margin-top: 30px;
+ text-align: center;
+ }
+
+ .share-link-title {
+ font-size: 14px;
+ color: #d4af37;
+ letter-spacing: 2px;
+ margin-bottom: 15px;
+ }
+
+ .share-link-url {
+ display: block;
+ word-break: break-all;
+ font-size: 13px;
+ color: #f0d78c;
+ background: rgba(0,0,0,0.3);
+ padding: 12px;
+ border-radius: 8px;
+ text-decoration: none;
+ margin-bottom: 12px;
+ cursor: pointer;
+ }
+
+ .share-link-hint {
+ font-size: 11px;
+ color: #8a7a5a;
+ }
+
+ /* 音乐自动播放提示 */
+ .autoplay-hint {
+ position: fixed;
+ bottom: 20px;
+ left: 50%;
+ transform: translateX(-50%);
+ background: rgba(212, 175, 55, 0.9);
+ color: #1a0a0a;
+ padding: 10px 20px;
+ border-radius: 50px;
+ font-size: 13px;
+ font-weight: 600;
+ z-index: 100;
+ animation: fadeInUp 0.5s ease;
+ cursor: pointer;
+ }
+
+ @keyframes fadeInUp {
+ from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+ to { opacity: 1; transform: translateX(-50%) translateY(0); }
+ }
 </style>
 </head>
 <body>
 
-<!-- 微信分享卡片 - 隐藏图片（微信抓取缩略图用，必须放在body最前面） -->
-<div style="display:none;">
- <img src="https://www.qclaw.team/logo.jpg" width="300" height="300" alt="">
-</div>
+<!-- 微信分享专用图片（必须是300x300以上，jpg/png） -->
+<img class="weixin-share-img" src="https://www.qclaw.team/logo.jpg" alt="" width="300" height="300">
+<img class="weixin-share-img" src="https://www.qclaw.team/logo.jpg" alt="" width="300" height="300">
 
 <!-- 个性化问候栏 -->
 <div class="personal-greeting" id="personalGreeting">
@@ -533,6 +539,18 @@
  </div>
  </div>
 
+ <!-- 分享链接展示（用于复制和分享） -->
+ <div class="section scroll-animate" id="share">
+ <div class="section-label">SHARE</div>
+ <div class="section-title">邀请好友</div>
+ <div class="section-divider"></div>
+ <div class="share-link-box">
+ <div class="share-link-title">您的专属邀请链接</div>
+ <div class="share-link-url" id="shareUrlDisplay" onclick="copyShareLink()"></div>
+ <div class="share-link-hint">点击链接复制，然后在微信中发送给朋友或分享到朋友圈</div>
+ </div>
+ </div>
+
  <!-- 页脚 -->
  <div class="footer-section">
  <img src="https://www.qclaw.team/logo.jpg" alt="心意内衣" class="footer-logo" onerror="this.style.display='none'">
@@ -549,8 +567,19 @@
 
 </div>
 
+<!-- 音乐自动播放提示 -->
+<div class="autoplay-hint" id="autoplayHint" onclick="initMusic()" style="display:none;">
+ 🎵 点击播放背景音乐
+</div>
+
 <script>
-// URL参数解析
+// 全局变量
+var music = null;
+var musicBtn = null;
+var isPlaying = false;
+var musicInitialized = false;
+
+// 获取URL参数
 function getUrlParam(name) {
  var params = new URLSearchParams(window.location.search);
  return params.get(name);
@@ -565,12 +594,72 @@ function setPersonalGreeting() {
  }
 }
 
+// 更新分享链接显示
+function updateShareLink() {
+ var name = getUrlParam('name');
+ var baseUrl = 'https://www.qclaw.team/share.html';
+ var shareUrl;
+ if (name && name.trim() !== '') {
+ shareUrl = baseUrl + '?name=' + encodeURIComponent(name);
+ } else {
+ shareUrl = baseUrl;
+ }
+ var displayEl = document.getElementById('shareUrlDisplay');
+ displayEl.textContent = shareUrl;
+ displayEl.dataset.url = shareUrl;
+}
+
+// 复制分享链接
+function copyShareLink() {
+ var url = document.getElementById('shareUrlDisplay').dataset.url || window.location.href;
+ // 移除name参数获取基础链接
+ if (url.indexOf('name=') > -1) {
+ url = url.split('name=')[0];
+ if (url.endsWith('?')) url = url.slice(0, -1);
+ if (url.endsWith('&')) url = url.slice(0, -1);
+ }
+ // 复制到剪贴板
+ if (navigator.clipboard) {
+ navigator.clipboard.writeText(url).then(function() {
+ alert('链接已复制！请在微信中粘贴发送给朋友。');
+ }).catch(function() {
+ prompt('请复制此链接：', url);
+ });
+ } else {
+ prompt('请复制此链接：', url);
+ }
+}
+
 // 音乐控制
-var isPlaying = false;
-var music = document.getElementById('bgMusic');
-var musicBtn = document.getElementById('musicBtn');
+function initMusic() {
+ if (musicInitialized) return;
+ music = document.getElementById('bgMusic');
+ musicBtn = document.getElementById('musicBtn');
+ musicInitialized = true;
+
+ // 尝试自动播放
+ tryPlayMusic();
+
+ // 隐藏提示
+ var hint = document.getElementById('autoplayHint');
+ if (hint) hint.style.display = 'none';
+}
+
+function tryPlayMusic() {
+ if (!music) return;
+ music.play().then(function() {
+ isPlaying = true;
+ musicBtn.classList.add('playing');
+ }).catch(function(e) {
+ console.log('Auto-play blocked:', e);
+ // 显示手动播放提示
+ var hint = document.getElementById('autoplayHint');
+ if (hint) hint.style.display = 'block';
+ });
+}
 
 function toggleMusic() {
+ initMusic();
  if (isPlaying) {
  music.pause();
  musicBtn.classList.remove('playing');
@@ -579,14 +668,6 @@ function toggleMusic() {
  musicBtn.classList.add('playing');
  }
  isPlaying = !isPlaying;
-}
-
-// 自动播放
-function autoPlayMusic() {
- music.play().then(function() {
- isPlaying = true;
- musicBtn.classList.add('playing');
- }).catch(function() {});
 }
 
 // 倒计时
@@ -618,7 +699,7 @@ function scrollToTop() {
 
 // 点击特效
 document.addEventListener('click', function(e) {
- var fx = ['✨','💫','⭐','🌟'];
+ var fx = ['✨', '💫', '⭐', '🌟'];
  var d = document.createElement('div');
  d.className = 'click-effect';
  d.textContent = fx[Math.floor(Math.random() * fx.length)];
@@ -628,12 +709,45 @@ document.addEventListener('click', function(e) {
  setTimeout(function() { d.remove(); }, 1000);
 });
 
-// 初始化
+// 页面加载完成后执行
 document.addEventListener('DOMContentLoaded', function() {
  setPersonalGreeting();
  updateCountdown();
  setInterval(updateCountdown, 1000);
- setTimeout(autoPlayMusic, 1000);
+ updateShareLink();
+
+ // 初始化音乐控制（但不立即播放，等待用户交互）
+ setTimeout(function() {
+ music = document.getElementById('bgMusic');
+ musicBtn = document.getElementById('musicBtn');
+ musicInitialized = true;
+
+ // 尝试自动播放音乐
+ var tryAutoPlay = function() {
+ if (music && music.paused) {
+ music.play().then(function() {
+ isPlaying = true;
+ musicBtn.classList.add('playing');
+ }).catch(function() {
+ // 自动播放被阻止，显示提示
+ var hint = document.getElementById('autoplayHint');
+ if (hint) hint.style.display = 'block';
+ });
+ }
+ };
+
+ // 延迟尝试自动播放
+ setTimeout(tryAutoPlay, 1500);
+
+ // 如果自动播放被阻止，监听用户首次交互
+ var firstInteraction = function() {
+ tryAutoPlay();
+ document.removeEventListener('click', firstInteraction);
+ document.removeEventListener('touchstart', firstInteraction);
+ };
+ document.addEventListener('click', firstInteraction);
+ document.addEventListener('touchstart', firstInteraction);
+ }, 100);
 });
 </script>
 
