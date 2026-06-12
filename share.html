@@ -6,11 +6,11 @@
 
 <title>心意内衣2026年中感恩盛典邀请函</title>
 
-<!-- 微信分享优化 - 使用 http-equiv 让微信尽快抓取 -->
+<!-- 微信分享优化 -->
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta name="description" content="同心同行·孝暖初心·致敬坚守 | 2026年6月17日 建瓯玺苑大酒店">
 
-<!-- 微信og标签 - 关键优化 -->
+<!-- 微信og标签 -->
 <meta property="og:title" content="心意内衣2026年中感恩盛典邀请函">
 <meta property="og:description" content="2026年6月17日 建瓯玺苑大酒店 | 心意内衣诚邀您参加">
 <meta property="og:image" content="https://www.qclaw.team/logo.jpg">
@@ -42,7 +42,7 @@
  overflow: hidden;
  }
 
- /* 微信分享图片 - 关键！必须放在body内 */
+ /* 微信分享图片 */
  .weixin-share-img { display: none; }
 
  /* 个性化问候栏 */
@@ -62,6 +62,7 @@
  .greeting-icon { font-size: 18px; }
  .greeting-text { font-size: 13px; color: #f0d78c; letter-spacing: 1px; line-height: 1.6; }
  .greeting-name { font-weight: 600; color: #d4af37; }
+ .greeting-title { font-weight: 600; color: #d4af37; margin-left: 2px; }
 
  /* 封面 */
  .cover {
@@ -284,41 +285,6 @@
  50% { transform: scale(1.05); }
  }
 
- /* 分享链接展示框 */
- .share-link-box {
- background: rgba(212, 175, 55, 0.1);
- border: 1px solid rgba(212, 175, 55, 0.3);
- border-radius: 12px;
- padding: 20px;
- margin-top: 30px;
- text-align: center;
- }
-
- .share-link-title {
- font-size: 14px;
- color: #d4af37;
- letter-spacing: 2px;
- margin-bottom: 15px;
- }
-
- .share-link-url {
- display: block;
- word-break: break-all;
- font-size: 13px;
- color: #f0d78c;
- background: rgba(0,0,0,0.3);
- padding: 12px;
- border-radius: 8px;
- text-decoration: none;
- margin-bottom: 12px;
- cursor: pointer;
- }
-
- .share-link-hint {
- font-size: 11px;
- color: #8a7a5a;
- }
-
  /* 音乐自动播放提示 */
  .autoplay-hint {
  position: fixed;
@@ -344,8 +310,7 @@
 </head>
 <body>
 
-<!-- 微信分享专用图片（必须是300x300以上，jpg/png） -->
-<img class="weixin-share-img" src="https://www.qclaw.team/logo.jpg" alt="" width="300" height="300">
+<!-- 微信分享专用图片 -->
 <img class="weixin-share-img" src="https://www.qclaw.team/logo.jpg" alt="" width="300" height="300">
 
 <!-- 个性化问候栏 -->
@@ -353,7 +318,7 @@
  <div class="greeting-content">
  <span class="greeting-icon">✨</span>
  <div class="greeting-text">
- 尊敬的 <span class="greeting-name" id="guestName">嘉宾</span>，<br>
+ 尊敬的 <span class="greeting-name" id="guestName">嘉宾</span><span class="greeting-title" id="guestTitle"></span>，<br>
  非常荣幸邀请您参加心意内衣2026年年会
  </div>
  </div>
@@ -539,18 +504,6 @@
  </div>
  </div>
 
- <!-- 分享链接展示（用于复制和分享） -->
- <div class="section scroll-animate" id="share">
- <div class="section-label">SHARE</div>
- <div class="section-title">邀请好友</div>
- <div class="section-divider"></div>
- <div class="share-link-box">
- <div class="share-link-title">您的专属邀请链接</div>
- <div class="share-link-url" id="shareUrlDisplay" onclick="copyShareLink()"></div>
- <div class="share-link-hint">点击链接复制，然后在微信中发送给朋友或分享到朋友圈</div>
- </div>
- </div>
-
  <!-- 页脚 -->
  <div class="footer-section">
  <img src="https://www.qclaw.team/logo.jpg" alt="心意内衣" class="footer-logo" onerror="this.style.display='none'">
@@ -588,45 +541,20 @@ function getUrlParam(name) {
 // 设置个性化问候
 function setPersonalGreeting() {
  var name = getUrlParam('name');
- var el = document.getElementById('guestName');
- if (name && name.trim() !== '') {
- el.textContent = decodeURIComponent(name);
- }
-}
+ var title = getUrlParam('title');
+ var nameEl = document.getElementById('guestName');
+ var titleEl = document.getElementById('guestTitle');
 
-// 更新分享链接显示
-function updateShareLink() {
- var name = getUrlParam('name');
- var baseUrl = 'https://www.qclaw.team/share.html';
- var shareUrl;
  if (name && name.trim() !== '') {
- shareUrl = baseUrl + '?name=' + encodeURIComponent(name);
+ nameEl.textContent = decodeURIComponent(name);
  } else {
- shareUrl = baseUrl;
+ nameEl.textContent = '嘉宾';
  }
- var displayEl = document.getElementById('shareUrlDisplay');
- displayEl.textContent = shareUrl;
- displayEl.dataset.url = shareUrl;
-}
 
-// 复制分享链接
-function copyShareLink() {
- var url = document.getElementById('shareUrlDisplay').dataset.url || window.location.href;
- // 移除name参数获取基础链接
- if (url.indexOf('name=') > -1) {
- url = url.split('name=')[0];
- if (url.endsWith('?')) url = url.slice(0, -1);
- if (url.endsWith('&')) url = url.slice(0, -1);
- }
- // 复制到剪贴板
- if (navigator.clipboard) {
- navigator.clipboard.writeText(url).then(function() {
- alert('链接已复制！请在微信中粘贴发送给朋友。');
- }).catch(function() {
- prompt('请复制此链接：', url);
- });
+ if (title && title.trim() !== '') {
+ titleEl.textContent = decodeURIComponent(title);
  } else {
- prompt('请复制此链接：', url);
+ titleEl.textContent = '';
  }
 }
 
@@ -714,9 +642,8 @@ document.addEventListener('DOMContentLoaded', function() {
  setPersonalGreeting();
  updateCountdown();
  setInterval(updateCountdown, 1000);
- updateShareLink();
 
- // 初始化音乐控制（但不立即播放，等待用户交互）
+ // 初始化音乐控制
  setTimeout(function() {
  music = document.getElementById('bgMusic');
  musicBtn = document.getElementById('musicBtn');
