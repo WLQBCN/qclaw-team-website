@@ -496,8 +496,18 @@
   </div>
 </div>
 
+<!-- 默认问候（无name参数时显示） -->
+<div class="personal-greeting" id="defaultGreeting" style="display:none;">
+  <div class="greeting-content">
+    <span class="greeting-icon">✨</span>
+    <div class="greeting-text">
+      诚挚邀请您参加心意内衣2026年年会
+    </div>
+  </div>
+</div>
+
 <audio id="bgMusic" loop preload="auto">
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=soft-piano-100-bpm-121529.mp3" type="audio/mpeg">
 </audio>
 
 <div class="music-control" id="musicBtn" onclick="toggleMusic()">
@@ -673,14 +683,20 @@ function getUrlParam(name) {
 function setPersonalGreeting() {
   const name = getUrlParam('name') || getUrlParam('n');
   const guestNameEl = document.getElementById('guestName');
+  const personalGreeting = document.getElementById('personalGreeting');
+  const defaultGreeting = document.getElementById('defaultGreeting');
 
   if (name) {
     // 解码URL编码的中文
     const decodedName = decodeURIComponent(name);
-    guestNameEl.textContent = decodedName + '先生/女士';
+    guestNameEl.textContent = decodedName;
+    // 显示个性化问候，隐藏默认问候
+    personalGreeting.style.display = 'block';
+    defaultGreeting.style.display = 'none';
   } else {
-    // 如果没有name参数，隐藏问候栏
-    document.getElementById('personalGreeting').style.display = 'none';
+    // 如果没有name参数，显示默认问候
+    personalGreeting.style.display = 'none';
+    defaultGreeting.style.display = 'block';
   }
 }
 
