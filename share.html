@@ -12,11 +12,9 @@
 <meta name="keywords" content="心意内衣,年会,邀请函,感恩盛典" />
 <meta property="og:title" content="心意内衣2026年中感恩盛典邀请函" />
 <meta property="og:description" content="同心同行·孝暖初心·致敬坚守 | 2026年6月17日 建瓯玺苑大酒店" />
-<meta property="og:image" content="https://www.qclaw.team/share.jpg" />
-<meta property="og:url" content="https://www.qclaw.team/invitation.html" />
+<meta property="og:image" content="https://www.qclaw.team/logo.jpg" />
+<meta property="og:url" content="https://www.qclaw.team/share.html" />
 <meta property="og:type" content="website" />
-<meta property="og:image:width" content="300" />
-<meta property="og:image:height" content="300" />
 
 <style>
  * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -491,16 +489,11 @@
  100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
  }
 
- /* 滚动动画 */
+ /* 滚动动画 - 默认可见 */
  .scroll-animate {
- opacity: 0;
- transform: translateY(30px);
- transition: all 0.8s ease-out;
- }
-
- .scroll-animate.visible {
  opacity: 1;
  transform: translateY(0);
+ transition: all 0.8s ease-out;
  }
 
  /* 倒计时 */
@@ -666,11 +659,6 @@
 </head>
 <body>
 
-<!-- 微信抓取用的隐藏图片 -->
-<div style="display:none;">
- <img src="https://www.qclaw.team/share.jpg" alt="心意内衣2026年中感恩盛典邀请函" />
-</div>
-
 <!-- 个性化问候栏 -->
 <div class="personal-greeting" id="personalGreeting">
  <div class="greeting-content">
@@ -678,16 +666,6 @@
  <div class="greeting-text">
  尊敬的 <span class="greeting-name" id="guestName">嘉宾</span>，<br>
  非常荣幸邀请您参加心意内衣2026年年会
- </div>
- </div>
-</div>
-
-<!-- 默认问候（无name参数时显示） -->
-<div class="personal-greeting" id="defaultGreeting" style="display:none;">
- <div class="greeting-content">
- <span class="greeting-icon">✨</span>
- <div class="greeting-text">
- 诚挚邀请您参加心意内衣2026年年会
  </div>
  </div>
 </div>
@@ -841,5 +819,191 @@
  <div class="timeline-item">
  <div class="timeline-dot"></div>
  <div class="timeline-time">17:30 - 18:00</div>
- <div class="timeline-title">开场 ·
-...(truncated)...
+ <div class="timeline-title">开场 · 致辞与宣誓</div>
+ <div class="timeline-desc">主持人开场，总经理致辞，全员宣誓</div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-dot"></div>
+ <div class="timeline-time">18:00 - 19:00</div>
+ <div class="timeline-title">第一篇章 · 凝心聚力</div>
+ <div class="timeline-desc">团队风采展示，互动游戏破冰</div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-dot"></div>
+ <div class="timeline-time">19:00 - 19:30</div>
+ <div class="timeline-title">第二篇章 · 孝道感恩</div>
+ <div class="timeline-desc">员工父母感恩视频，子女才艺表演</div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-dot"></div>
+ <div class="timeline-time">19:30 - 20:00</div>
+ <div class="timeline-title">第三篇章 · 致敬坚守</div>
+ <div class="timeline-desc">老员工荣休仪式，致敬坚守者</div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-dot"></div>
+ <div class="timeline-time">20:00 - 20:30</div>
+ <div class="timeline-title">第四篇章 · 文艺汇演</div>
+ <div class="timeline-desc">员工才艺表演，抽奖互动环节</div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-dot"></div>
+ <div class="timeline-time">20:30 - 21:00</div>
+ <div class="timeline-title">尾声 · 展望未来</div>
+ <div class="timeline-desc">合影留念，自由交流，晚宴结束</div>
+ </div>
+ </div>
+ </div>
+
+ <!-- 活动亮点 -->
+ <div class="section scroll-animate">
+ <div class="section-label">HIGHLIGHTS</div>
+ <div class="section-title">精彩看点</div>
+ <div class="section-divider"></div>
+ <div class="highlights">
+ <span class="highlight-tag">🎭 员工才艺秀</span>
+ <span class="highlight-tag">🎁 幸运大抽奖</span>
+ <span class="highlight-tag">📸 专业摄影</span>
+ <span class="highlight-tag">🍽️ 精美晚宴</span>
+ <span class="highlight-tag">🎵 现场乐队</span>
+ <span class="highlight-tag">💝 感恩礼物</span>
+ </div>
+ </div>
+
+ <!-- 页脚 -->
+ <div class="footer-section">
+ <img src="https://www.qclaw.team/logo.jpg" alt="心意内衣" class="footer-logo" onerror="this.style.display='none'">
+ <div class="footer-slogan">同心同行 · 共创未来</div>
+ <div class="footer-oath">
+ 我们承诺：以孝为先，以诚为本<br>
+ 用心服务每一位客户，用爱温暖每一个家庭
+ </div>
+ <div class="footer-note">
+ 心意内衣 · 建瓯市<br>
+ 期待与您相聚，共襄盛举
+ </div>
+ </div>
+
+</div>
+
+<script>
+// 获取URL参数中的姓名
+function getUrlParam(name) {
+ const urlParams = new URLSearchParams(window.location.search);
+ return urlParams.get(name);
+}
+
+// 设置个性化问候
+function setPersonalGreeting() {
+ const name = getUrlParam('name');
+ const guestNameEl = document.getElementById('guestName');
+ const personalGreetingEl = document.getElementById('personalGreeting');
+ 
+ if (name && name.trim() !== '') {
+ // 有姓名参数，显示个性化问候
+ guestNameEl.textContent = decodeURIComponent(name);
+ personalGreetingEl.style.display = 'block';
+ } else {
+ // 无姓名参数，显示默认问候
+ guestNameEl.textContent = '嘉宾';
+ personalGreetingEl.style.display = 'block';
+ }
+}
+
+// 音乐控制
+let isPlaying = false;
+const music = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
+
+function toggleMusic() {
+ if (isPlaying) {
+ music.pause();
+ musicBtn.classList.remove('playing');
+ } else {
+ music.play().catch(e => console.log('Auto-play prevented:', e));
+ musicBtn.classList.add('playing');
+ }
+ isPlaying = !isPlaying;
+}
+
+// 自动播放音乐（尝试）
+function autoPlayMusic() {
+ music.play().then(() => {
+ isPlaying = true;
+ musicBtn.classList.add('playing');
+ }).catch(e => {
+ console.log('Auto-play prevented, waiting for user interaction');
+ });
+}
+
+// 倒计时
+function updateCountdown() {
+ const eventDate = new Date('2026-06-17T17:00:00');
+ const now = new Date();
+ const diff = eventDate - now;
+ 
+ if (diff > 0) {
+ const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+ const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+ const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+ const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+ 
+ document.getElementById('countdown-days').textContent = String(days).padStart(2, '0');
+ document.getElementById('countdown-hours').textContent = String(hours).padStart(2, '0');
+ document.getElementById('countdown-minutes').textContent = String(minutes).padStart(2, '0');
+ document.getElementById('countdown-seconds').textContent = String(seconds).padStart(2, '0');
+ }
+}
+
+// RSVP功能
+function rsvp(willAttend) {
+ const resultEl = document.getElementById('rsvpResult');
+ const messageEl = document.getElementById('rsvpMessage');
+ 
+ resultEl.classList.add('show');
+ 
+ if (willAttend) {
+ messageEl.innerHTML = '<div style="color:#d4af37;font-size:18px;font-weight:600;">🎉 感谢您的确认！</div><div style="color:#a09080;margin-top:10px;">我们已收到您的出席确认，期待与您相聚！</div>';
+ } else {
+ messageEl.innerHTML = '<div style="color:#c9a04a;font-size:18px;font-weight:600;">😔 很遗憾您无法参加</div><div style="color:#a09080;margin-top:10px;">感谢您的回复，期待下次相聚！</div>';
+ }
+}
+
+// 滚动到指定部分
+function scrollToSection(id) {
+ const element = document.getElementById(id);
+ if (element) {
+ element.scrollIntoView({ behavior: 'smooth' });
+ }
+}
+
+// 回到顶部
+function scrollToTop() {
+ window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// 点击特效
+document.addEventListener('click', function(e) {
+ const effects = ['✨', '💫', '⭐', '🌟'];
+ const effect = document.createElement('div');
+ effect.className = 'click-effect';
+ effect.textContent = effects[Math.floor(Math.random() * effects.length)];
+ effect.style.left = e.clientX + 'px';
+ effect.style.top = e.clientY + 'px';
+ document.body.appendChild(effect);
+ setTimeout(() => effect.remove(), 1000);
+});
+
+// 页面加载完成后执行
+document.addEventListener('DOMContentLoaded', function() {
+ setPersonalGreeting();
+ updateCountdown();
+ setInterval(updateCountdown, 1000);
+ 
+ // 尝试自动播放音乐
+ setTimeout(autoPlayMusic, 1000);
+});
+</script>
+
+</body>
+</html>
