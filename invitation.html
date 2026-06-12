@@ -2,8 +2,52 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>心意内衣2026年中感恩盛典邀请函</title>
+
+<!-- 微信分享元数据 -->
+<meta property="og:title" content="心意内衣2026年中感恩盛典邀请函" />
+<meta property="og:description" content="同心同行·孝暖初心·致敬坚守 | 2026年6月17日 建瓯玺苑大酒店" />
+<meta property="og:image" content="https://www.qclaw.team/logo.jpg" />
+<meta property="og:url" content="https://www.qclaw.team/invitation.html" />
+<meta property="og:type" content="website" />
+
+<!-- 微信专属元数据 -->
+<meta itemprop="name" content="心意内衣2026年中感恩盛典邀请函" />
+<meta itemprop="description" content="同心同行·孝暖初心·致敬坚守 | 2026年6月17日 建瓯玺苑大酒店" />
+<meta itemprop="image" content="https://www.qclaw.team/logo.jpg" />
+
+<!-- QQ分享元数据 -->
+<meta name="description" content="同心同行·孝暖初心·致敬坚守 | 2026年6月17日 建瓯玺苑大酒店" />
+<meta name="image" content="https://www.qclaw.team/logo.jpg" />
+
+<!-- 微信JSSDK配置（需要后端支持，这里提供配置模板） -->
+<script>
+// 微信分享配置
+const shareConfig = {
+  title: '心意内衣2026年中感恩盛典邀请函',
+  desc: '同心同行·孝暖初心·致敬坚守 | 6月17日 建瓯玺苑大酒店',
+  link: 'https://www.qclaw.team/invitation.html',
+  imgUrl: 'https://www.qclaw.team/logo.jpg',
+  success: function() {
+    console.log('分享成功');
+  },
+  cancel: function() {
+    console.log('取消分享');
+  }
+};
+
+// 如果有微信JSSDK
+if (typeof wx !== 'undefined') {
+  wx.ready(function() {
+    wx.onMenuShareTimeline(shareConfig);
+    wx.onMenuShareAppMessage(shareConfig);
+    wx.onMenuShareQQ(shareConfig);
+    wx.onMenuShareQZone(shareConfig);
+  });
+}
+</script>
+
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   
@@ -651,17 +695,61 @@ function toggleMusic() {
   isPlaying = !isPlaying;
 }
 
-// 页面加载后自动尝试播放（可能需要用户点击）
-document.addEventListener('click', function initMusic() {
-  if (!isPlaying) {
-    bgMusic.play().then(() => {
-      isPlaying = true;
-      musicBtn.classList.add('playing');
-      musicBtn.innerHTML = '<span class="music-icon">🎶</span>';
-    }).catch(e => {});
-  }
-  document.removeEventListener('click', initMusic);
-}, { once: true });
+// 自动播放音乐 - 多种策略
+try {
+  // 策略1: 页面加载后立即尝试播放
+  bgMusic.play().then(() => {
+    isPlaying = true;
+    musicBtn.classList.add('playing');
+    musicBtn.innerHTML = '<span class="music-icon">🎶</span>';
+    console.log('音乐自动播放成功');
+  }).catch(e => {
+    console.log('自动播放被阻止，尝试其他策略');
+    
+    // 策略2: 监听页面可见性变化
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden && !isPlaying) {
+        bgMusic.play().then(() => {
+          isPlaying = true;
+          musicBtn.classList.add('playing');
+          musicBtn.innerHTML = '<span class="music-icon">🎶</span>';
+        }).catch(e => {});
+      }
+    });
+    
+    // 策略3: 监听用户首次交互（触摸、点击、滚动）
+    const userEvents = ['touchstart', 'click', 'scroll', 'keydown'];
+    function autoPlayOnInteraction() {
+      if (!isPlaying) {
+        bgMusic.play().then(() => {
+          isPlaying = true;
+          musicBtn.classList.add('playing');
+          musicBtn.innerHTML = '<span class="music-icon">🎶</span>';
+        }).catch(e => {});
+      }
+      // 移除所有事件监听
+      userEvents.forEach(event => {
+        document.removeEventListener(event, autoPlayOnInteraction);
+      });
+    }
+    userEvents.forEach(event => {
+      document.addEventListener(event, autoPlayOnInteraction, { once: true, passive: true });
+    });
+    
+    // 策略4: 延迟尝试（某些浏览器允许）
+    setTimeout(() => {
+      if (!isPlaying) {
+        bgMusic.play().then(() => {
+          isPlaying = true;
+          musicBtn.classList.add('playing');
+          musicBtn.innerHTML = '<span class="music-icon">🎶</span>';
+        }).catch(e => {});
+      }
+    }, 1000);
+  });
+} catch (e) {
+  console.log('音乐播放出错:', e);
+}
 </script>
 </body>
 </html>
